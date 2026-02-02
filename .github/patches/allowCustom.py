@@ -20,7 +20,7 @@ def remove_line_block(filepath, start_phrase, lines_to_remove_after_start):
 
     # 2. Read and filter the file content
     try:
-        with open(filepath, 'r') as file:
+        with open(filepath, 'r', encoding='utf-8') as file:
             for line in file:
                 
                 # If we are currently in the process of skipping lines, decrement the counter and continue
@@ -45,7 +45,7 @@ def remove_line_block(filepath, start_phrase, lines_to_remove_after_start):
 
     # 3. Write the remaining lines back to the file
     try:
-        with open(filepath, 'w') as file:
+        with open(filepath, 'w', encoding='utf-8') as file:
             file.writelines(lines_to_keep)
             
         print(f"Success! Removed the 9-line block starting with '{start_phrase.strip()}' from {filepath}.")
