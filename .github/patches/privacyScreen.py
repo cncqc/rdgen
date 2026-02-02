@@ -8,7 +8,7 @@ def convert_png_to_cpp(input_file, output_file, array_name="g_img"):
     with open(input_file, "rb") as f:
         data = f.read()
 
-    with open(output_file, "w") as f:
+    with open(output_file, "w", encoding='utf-8') as f:
         f.write('#include "pch.h"\n')
         f.write('#include "./img.h"\n\n')
         f.write(f"const unsigned char {array_name}[] = {{\n")
